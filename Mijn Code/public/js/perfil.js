@@ -10,7 +10,7 @@ function modalNombreUsuario() {
   $("#modalNombre").modal("show");
 }
 
-function modalCuenta() {
+function modalPlan() {
   $("#modalCuenta").modal("show");
 }
 

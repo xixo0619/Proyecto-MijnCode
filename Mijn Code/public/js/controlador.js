@@ -1,3 +1,8 @@
+function modalLoginModal() {
+    $("#loginModal").modal("show");
+  }
+
+
 $("btn-login").click(function() {
     $.ajax({
         url:"/login",
