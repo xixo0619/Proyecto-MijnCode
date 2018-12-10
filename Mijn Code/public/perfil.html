@@ -19,7 +19,8 @@
   <body class="bg-light">
 
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark " style="background-color: #027da3!important;">
-      <a class="navbar-brand mr-auto mr-lg-0" href="index.html"><img src="img/logo/logo.png" style="width: 40px; height: 40px; margin-right: 25px;""></a>
+      <a class="navbar-brand mr-auto mr-lg-0" href="index.html">
+      <img src="img/logo/logo.png" style="width: 40px; height: 40px; margin-right: 25px;""></a>
       <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -43,7 +44,7 @@
                 <a class="btn btn-primary" href="#" onclick="modalImagenPerfil()" role="button" style="height: 34px; width: 186px;margin-bottom: 5px">Imagen de Perfil</a>
             </div>
         </ul>
-            <div>
+            <div id="btn-cerrar">
                <form class="form-inline my-2 my-lg-0">
                    <a class="nav-link" href="index.html" style="color:rgba(255,255,255,.5)"><h5>SIGN OUT</h5></a></li>
                </form>
@@ -77,14 +78,14 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Guardar Cambios</button>
+            <button type="button" class="btn btn-primary" id="btn-nombre">Guardar Cambios</button>
           </div>
         </div>
       </div>
     </div>
     
     <!--Modal Actualizar Tipo de Plan-->
-    <div class="modal" id="modalCuenta" tabindex="-1" role="dialog">
+    <div class="modal" id="modalPlan" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -111,7 +112,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Guardar Cambios</button>
+              <button type="button" class="btn btn-primary" id="btn-plan">Guardar Cambios</button>
             </div>
           </div>
         </div>
@@ -133,7 +134,7 @@
                     <tr>
                       <td>Nueva Imagen:</td>
                       <td>
-                        <input class="form-control" type="text">
+                        <input class="form-control" type="text" id="txt-imagen" value="img/usuarios/...">
                       </td>
                     </tr>
                   </table>
@@ -141,7 +142,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Guardar Cambios</button>
+                <button type="button" class="btn btn-primary" id="btn-imagen">Guardar Cambios</button>
               </div>
             </div>
           </div>
@@ -176,7 +177,7 @@
             <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
             <a href="#" class="btn btn-primary">Go somewhere</a>
             <h1><div id="lbl-usuario"></div></h1>
-            <p class="title"><div id="lbl-nombre-apellido"></div></p>
+            <p class="title"><div id="lbl-datos"></div></p>
             <p><div id="lbl-correo"></div></p> 
             <p><button><div id="lbl-tipo"></div></button></p>
           </div>
@@ -212,7 +213,7 @@
       </div>
 
 
-      <!-- Cominezo de Sugerencias  -->
+      <!-- Comienzzo de Sugerencias  -->
       
       <div class="my-3 p-3 bg-white rounded shadow-sm">
         <h6 class="border-bottom border-gray pb-2 mb-0">Sugerencias</h6>

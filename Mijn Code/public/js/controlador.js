@@ -22,10 +22,10 @@ $("btn-login").click(function() {
 
 
 $("#btn-registro-usuario").click(function(){
-    var parametros = "nombre"+$("#txt-nombre-usuario").val() + "&" + 
-                     "apellido="+$("#txt-apellido-usuario").val() + "&" +
-                     "correo="+$("#txt-correo-usuario").val() + "&" +
-                     "nombre_usuario="+$("#txt-usuario").val() + "&" +
+    var parametros = "nombre_usuario"+$("#txt-usuario").val() + "&" + 
+                     "nombre="+$("#txt-nombre").val() + "&" +
+                     "apellido="+$("#txt-apellido").val() + "&" +
+                     "correo="+$("#txt-correo").val() + "&" +
                      "contrasena="+$("#txt-contrasena").val();
     $.ajax({
         url: "/registro",
@@ -34,12 +34,12 @@ $("#btn-registro-usuario").click(function(){
         datatype:"json",
         success: function(res){
             console.log($("#txt-usuario").val());
-            $("#txt-nombre-usuario").val("");
-            $("#txt-apellido-usuario").val("");
-            $("#txt-correo-usuario").val("");
+            $("#txt-nombre").val("");
+            $("#txt-apellido").val("");
+            $("#txt-correo").val("");
             $("#txt-usuario").val("");
             $("#txt-contrasena").val(""); 
         }   
-    })     
+    })       
     alert("Registrado exitosamente");             
 });
