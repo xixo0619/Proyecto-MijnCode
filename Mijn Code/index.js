@@ -139,5 +139,40 @@ app.get("/actualizar-usuario", function (req,res) {
 });
 
 
+//Rutas para las actualizaciones
+app.post("/actualizar-imagen", function(req,res) {
+    var conexion = mysql.createConnection(credenciales);
+    conexion.query("UPDATE tbl_usuarios SET imagen_perfil = ? WHERE tbl_usuarios.id_usuarios = ?",
+                    [req.body.imagen_perfil, req.session.id_usuarios],
+                    function (err,data,fields) {
+                        if (err)  throw err;
+                        res.send(data);                       
+                    });
+});
+
+
+app.post("/actualizar-plan", function (req,res) {
+    var conexion = mysql.createConnection(credenciales);
+    conexion.query("UPDATE tbl_usuarios SET id_planes = ? WHERE tbl_usuarios.id_usuarios = ?",
+                    [req.body.id_planes, req.session.id_usuarios],
+                    function (err,data,fields) {
+                        if(err) throw err;
+                        res.send(data);
+                        
+                    });
+});
+
+app.get("/actualizar-usuario", function (req,res) {
+    var conexion = mysql.createConnection(credenciales);
+    conexion.query("UPDATE tbl_usuarios SET nombre_usuario= ? WHERE tbl_usuarios.id_usuarios = ?",
+                    [req.query.nombre_usuario, req.session.id_usuarios],
+                    function (err,data,fields){
+                        if (err) throw err;
+                        res.send(data);
+                        res.end();
+                          });
+});
+
+
 app.listen(3000);
 console.log("Servidor levantado, esperando conexiones"); 
