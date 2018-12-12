@@ -3,7 +3,11 @@ function modalLoginModal() {
   }
 
 
+
 /*$("btn-login").click(function() {
+
+$("btn-login").click(function() {
+
     $.ajax({
         url:"/login",
         data:"usuario="+$("#login-usuario").val()+"&contrasena="+$("#login-contrasena").val(),
@@ -45,10 +49,17 @@ $("#btn-login").click(function () {
 
 
 $("#btn-registro-usuario").click(function(){
+
     var parametros = "nombre"+$("#txt-nombre").val() + "&" + 
                      "apellido="+$("#txt-apellido").val() + "&" +
                      "correo="+$("#txt-correo").val() + "&" +
                      "nombre_usuario="+$("#txt-usuario").val() + "&" +
+
+    var parametros = "nombre_usuario"+$("#txt-usuario").val() + "&" + 
+                     "nombre="+$("#txt-nombre").val() + "&" +
+                     "apellido="+$("#txt-apellido").val() + "&" +
+                     "correo="+$("#txt-correo").val() + "&" +
+
                      "contrasena="+$("#txt-contrasena").val();
     $.ajax({
         url: "/registro",
