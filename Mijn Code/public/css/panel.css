@@ -104,10 +104,17 @@ body {
 }
 
 #carpeta{
-  
-  margin-left: auto;
-  margin-right: auto;
-  height: 350px;
-  width: 900px;
+  margin-right:10px;
+  margin-top: 20px;
 }
 
+#archivo{
+  margin-right:10px;
+  margin-top: 20px;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #027da3;
+  border-color: #00a7d1b2;  
+}

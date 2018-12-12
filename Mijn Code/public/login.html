@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" type="img/png" href="img/logo/letra.png">
-    <title>Registro</title>
+    <title>Registro-Mijn Code</title>
 
     
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
@@ -21,13 +21,43 @@
   <body id="body-registro">
 
     <!-- Nav -->
-    <nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top">
-      <a class="navbar-brand" href="index.html"><img src="img/logo/logo.png" style="width: 10%; height: 10%;"></a>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top" >
+      <a class="navbar-brand" href="index.html"><img src="img/logo/logo.png" style="width: 40px"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active text-nowrap">
+                <a class="btn btn-primary" href="#" onclick="modalLoginModal()" role="button">LOGIN</a>
+              <!--<a class="nav-link" href="#">Login</a>-->
+            </li>
+          </ul>
+        </div>
     </nav>
+
+    <!--Modal-->
+    <div id="loginModal" class="modal" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content" style="background-color: rgb(232, 241, 243)">
+            <div class="modal-header">
+              <h4 class="modal-title">Login</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <p>Nombre De Usuario:</p>
+              <input type="text" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="login-usuario" placeholder="Escribe tu nombre de usuario...">
+              <br>
+              <p>Contraseña:</p>
+              <input type="password" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="login-contrasena" placeholder="******">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success mx-auto" data-dismiss="modal" id="btn-login" style="background-color: #027da3">Entrar</button>
+            </div>
+          </div>
+        </div>
+      </div> 
+        
     <!--Seccion de registro-->
     <div class="container ">
       <div class="row">
@@ -40,11 +70,11 @@
             <label>Nombre De Usuario</label>
             <input type="text" class="form-control" placeholder="Nombre de usuario" id="txt-usuario"><br>
             <label>Primer Nombre</label><br>
-            <input type="text" class="form-control" placeholder="Primer nombre" id="txt-nombre-usuario"><br>
+            <input type="text" class="form-control" placeholder="Primer nombre" id="txt-nombre"><br>
             <label>Primer Apellido</label><br>
-            <input type="text" class="form-control" placeholder="Primer apellido" id="txt-apellido-usuario"><br>
+            <input type="text" class="form-control" placeholder="Primer apellido" id="txt-apellido"><br>
             <label>Correo Electrónico</label><br>
-            <input type="email" class="form-control" placeholder="Correo electrónico" id="txt-correo-usuario">
+            <input type="email" class="form-control" placeholder="Correo electrónico" id="txt-correo">
             <label>Contraseña</label><br>
             <input type="password" class="form-control" placeholder="******" id="txt-contrasena"><br>
             <div id="btn-registro-usuario">
@@ -55,10 +85,10 @@
             </label><br>
             <hr>
               <div class="login-social">
-                <a class="btn" href="#">
+                <a class="btn" href="#" style="width: 164px">
                 <i class="fab fa-facebook"></i> Facebook
                 </a>
-                <a class="btn" href="#">
+                <a class="btn" href="#" style="width: 164px">
                 <i class="fab fa-twitter"></i> Twitter
                 </a>
               </div>
@@ -72,6 +102,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="jquery/jquery-easing/jquery.easing.min.js"></script>
+    <script src="js/controlador.js"></script>
     
 
   </body>
