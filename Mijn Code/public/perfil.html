@@ -19,7 +19,8 @@
   <body class="bg-light">
 
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark " style="background-color: #027da3!important;">
-      <a class="navbar-brand mr-auto mr-lg-0" href="index.html"><img src="img/logo/logo.png" style="width: 40px; height: 40px; margin-right: 25px;""></a>
+      <a class="navbar-brand mr-auto mr-lg-0" href="index.html">
+      <img src="img/logo/logo.png" style="width: 40px; height: 40px; margin-right: 25px;""></a>
       <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -36,75 +37,119 @@
             <a class="nav-link" href="#">Amigos <span class="badge badge-pill bg-light align-text-bottom" style="color:darkblue">10</span></a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actualizar Información</a>
+            <a class="nav-link dropdown-toggle"  id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actualizar Información</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
                 <a class="btn btn-primary" href="#" onclick="modalNombreUsuario()" role="button" style="height: 34px; width: 186px;margin-bottom: 5px">Nombre Usuario</a>
-                <a class="btn btn-primary" href="#" onclick="modalCuenta()" role="button" style="height: 34px; width: 186px;margin-bottom: 5px">Cuenta</a>
+                <a class="btn btn-primary" href="#" onclick="modalPlan()" role="button" style="height: 34px; width: 186px;margin-bottom: 5px">Plan</a>
                 <a class="btn btn-primary" href="#" onclick="modalImagenPerfil()" role="button" style="height: 34px; width: 186px;margin-bottom: 5px">Imagen de Perfil</a>
             </div>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <a class="nav-link" href="index.html" style="color:rgba(255,255,255,.5)"><h5>SIGN OUT</h5></a></li>
-        </form>
+
+             <div>
+               <form class="form-inline my-2 my-lg-0">
+                   <a class="nav-link" href="panel.html" style="color:rgba(255,255,255,.5)"><h5>INICIO</h5></a></li>
+               </form>
+            </div>
+
+            <div id="btn-cerrar">
+               <form class="form-inline my-2 my-lg-0">
+                   <a class="nav-link" href="index.html" style="color:rgba(255,255,255,.5)"><h5>SIGN OUT</h5></a></li>
+               </form>
+            </div>
       </div>
     </nav>
     
     <!--Modales para actualizar informacion de usuario-->
+   
+    <!--Modal Actualizar usuario-->
     <div class="modal" id="modalNombre" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Modal title</h5>
+            <h5 class="modal-title">Actualizar Nombre</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <p>Modal body text goes here.</p>
+            <form>
+              <table class="table table-light table-hover">
+                <tr>
+                  <td>Nuevo Nombre de Usuario:</td>
+                  <td>
+                    <input class="form-control" type="text" placeholder="Nombre usuario" id="txt-nombre-usuario">
+                  </td>
+                </tr>
+              </table>
+            </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-primary" id="btn-nombre">Guardar Cambios</button>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="modal" id="modalCuenta" tabindex="-1" role="dialog">
+    
+    <!--Modal Actualizar Tipo de Plan-->
+    <div class="modal" id="modalPlan" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Modal title</h5>
+              <h5 class="modal-title">Actualizar Plan</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              <p>Modal body text goes here.</p>
+              <form>
+                <table  class="table table-light table-hover">
+                  <tr>
+                    <td>Tipo de plan:</td>
+                    <td>
+                        <select class="form-control" id="slc-tipo">
+                            <option value="1">Gratis</option>
+                            <option value="2">Profesional</option>
+                            <option value="2">Enterprise</option>
+                        </select>
+                    </td>
+              </tr>
+                </table>
+              </form>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-primary" id="btn-plan">Guardar Cambios</button>
             </div>
           </div>
         </div>
       </div>
       
+      <!--Modal actualizar imagen-->
       <div class="modal" id="modalImagen" tabindex="-1" role="dialog">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title">Modal title</h5>
+                <h5 class="modal-title">Actualizar Imagen</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div class="modal-body">
-                <p>Modal body text goes here.</p>
+                <form>
+                  <table class="table table-light table-hover">
+                    <tr>
+                      <td>Nueva Imagen:</td>
+                      <td>
+                        <input class="form-control" type="text" id="txt-imagen" value="img/usuarios/...">
+                      </td>
+                    </tr>
+                  </table>
+                </form>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary" id="btn-imagen">Guardar Cambios</button>
               </div>
             </div>
           </div>
@@ -112,7 +157,7 @@
 
     <!--Fin de los Modales-->
 
-    <div class="nav-scroller bg-white shadow-sm">
+   <!-- <div class="nav-scroller bg-white shadow-sm">
       <nav class="nav nav-underline">
         <a class="nav-link active" href="#">Dashboard</a>
         <a class="nav-link" href="#">
@@ -127,16 +172,21 @@
         <a class="nav-link" href="#">Link</a>
         <a class="nav-link" href="#">Link</a>
       </nav>
-    </div>
+    </div>-->
 
     <main role="main" class="container">
       <!--Perfil de Usuario-->
       <div class="card" style="width: 18rem; margin-top: 15px">
           <img class="card-img-top" src="img/usuarios/Eric.png" alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <hr>
+            <h5 class="card-title">Erick Cartman</h5>
+            <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
             <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h1><div id="lbl-usuario"></div></h1>
+            <p class="title"><div id="lbl-datos"></div></p>
+            <p><div id="lbl-correo"></div></p> 
+            <p><button><div id="lbl-tipo"></div></button></p>
           </div>
         </div>
 
@@ -170,7 +220,7 @@
       </div>
 
 
-      <!-- Cominezo de Sugerencias  -->
+      <!-- Comienzzo de Sugerencias  -->
       
       <div class="my-3 p-3 bg-white rounded shadow-sm">
         <h6 class="border-bottom border-gray pb-2 mb-0">Sugerencias</h6>
