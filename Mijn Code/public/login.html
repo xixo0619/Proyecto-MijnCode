@@ -32,24 +32,40 @@
                 <a class="btn btn-primary" href="#" onclick="modalLoginModal()" role="button">LOGIN</a>
               <!--<a class="nav-link" href="#">Login</a>-->
             </li>
+
             <li class="nav-item active text-nowrap">
               <a class="btn btn-primary" href="#" onclick="modalRegistro()" role="button">Registro</a>
             <!--<a class="nav-link" href="#">Login</a>-->
           </li>
+
           </ul>
         </div>
     </nav>
+
 
     <!--Modal del boton login-->
     <div id="loginModal" class="modal" role="dialog">
         <div class="modal-dialog">
           <div class="modal-content">
+
+
+    <!--Modal-->
+    <div id="loginModal" class="modal" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content" style="background-color: rgb(232, 241, 243)">
+
+
             <div class="modal-header">
               <h4 class="modal-title">Login</h4>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
+
               <form id="formulario-login">
+
+
+              <form>
+
                 <p>Nombre De Usuario:</p>
                 <input type="text" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="login-usuario" placeholder="Escribe tu nombre de usuario...">
                 <br>
@@ -57,6 +73,7 @@
                 <input type="password" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="login-contrasena" placeholder="******">
                 </div>
                 <div class="modal-footer">
+
                 <button type="button" class="btn btn-success mx-auto" data-dismiss="modal" id="btn-login-dos" style="background-color: #027da3">Entrar</button>
               </form>
             </div>
@@ -96,6 +113,24 @@
         </div>
       </div>
     </div> 
+
+                <button type="button" class="btn btn-success mx-auto" data-dismiss="modal" id="btn-login" style="background-color: #027da3">Entrar</button>
+              </form>
+
+              <p>Nombre De Usuario:</p>
+              <input type="text" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="login-usuario" placeholder="Escribe tu nombre de usuario...">
+              <br>
+              <p>Contraseña:</p>
+              <input type="password" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="login-contrasena" placeholder="******">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success mx-auto" data-dismiss="modal" id="btn-login" style="background-color: #027da3">Entrar</button>
+
+            </div>
+          </div>
+        </div>
+      </div> 
+
         
     <!--Seccion de registro-->
     <div class="container ">
@@ -106,6 +141,7 @@
               Formulario De Registro Para Usuarios
             </label><br>
             <hr>
+
             <label>Primer Nombre</label>
             <input type="text" class="form-control" placeholder="Nombre" id="txt-nombre"><br>
             <label>Primer Apellido</label><br>
@@ -114,6 +150,27 @@
             <input type="text" class="form-control" placeholder="Correo electrónico" id="txt-correo"><br>
             <label>Nombre Usuario</label><br>
             <input type="email" class="form-control" placeholder="Usuario" id="txt-usuario">
+
+
+            <label>Primer Nombre</label>
+            <input type="text" class="form-control" placeholder="Nombre" id="txt-nombre"><br>
+            <label>Primer Apellido</label><br>
+            <input type="text" class="form-control" placeholder="Apellido" id="txt-apellido"><br>
+            <label>Correo Electrónico</label><br>
+            <input type="text" class="form-control" placeholder="Correo electrónico" id="txt-correo"><br>
+            <label>Nombre Usuario</label><br>
+            <input type="email" class="form-control" placeholder="Usuario" id="txt-usuario">
+
+            <label>Nombre De Usuario</label>
+            <input type="text" class="form-control" placeholder="Nombre de usuario" id="txt-usuario"><br>
+            <label>Primer Nombre</label><br>
+            <input type="text" class="form-control" placeholder="Primer nombre" id="txt-nombre"><br>
+            <label>Primer Apellido</label><br>
+            <input type="text" class="form-control" placeholder="Primer apellido" id="txt-apellido"><br>
+            <label>Correo Electrónico</label><br>
+            <input type="email" class="form-control" placeholder="Correo electrónico" id="txt-correo">
+
+
             <label>Contraseña</label><br>
             <input type="password" class="form-control" placeholder="******" id="txt-contrasena"><br>
             <div id="btn-registro-usuario">
