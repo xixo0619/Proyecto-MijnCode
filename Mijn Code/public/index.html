@@ -43,7 +43,7 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" data-toggle="modal" data-target="#loginModal" href="panel.html">Login</a>
+              <a class="nav-link" data-toggle="modal" data-target="#loginModal" href="#">Login</a>
             </li>
           </ul>
         </div>
@@ -53,21 +53,28 @@
     <!--Login Modal-->
     <div id="loginModal" class="modal fade" role="dialog">
       <div class="modal-dialog">
-        <div class="modal-content" style="background-color: rgb(232, 241, 243)">
+        <div class="modal-content">
           <div class="modal-header">
             <h4 class="modal-title">Login</h4>
             <button type="button" class="close" data-dismiss="modal">&times;</button>
           </div>
           <div class="modal-body">
-            <p>Nombre De Usuario:</p>
-            <input type="text" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="login-usuario" placeholder="Escribe tu nombre de usuario...">
-            <br>
-            <p>Contraseña:</p>
-            <input type="password" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="login-contrasena" placeholder="******">
+            <form id="formulario">
+              <p>Nombre De Usuario:</p>
+              <input type="text" class="form-control" id="login-usuario" placeholder="Escribe tu nombre de usuario...">
+              <br>
+              <p>Contraseña:</p>
+              <input type="password" class="form-control" id="login-contrasena" placeholder="******">
+              </div>
+              <div class="modal-footer">
+              <button type="button" class="btn btn-success mx-auto" data-dismiss="modal" id="btn-login" style="background-color: #027da3">Entrar</button>
+            </form>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-success mx-auto" data-dismiss="modal" id="btn-login" style="background-color: #027da3">Entrar</button>
-          </div>
+          <div>
+              <p><h4>O registrate con una red social</h4></p>
+              <button type="button" class="btn btn-info" style="margin-bottom: 10px; margin-left: 80px">Twitter</button>
+              <button type="button" class="btn btn-info" style="margin-bottom: 10px; margin-left: 30px">Facebook</button>
+            </div>
         </div>
       </div>
     </div>
@@ -84,12 +91,12 @@
               compartir los archivos con otros usuarios registrados dentro de la plataforma.
             
           </h2>
-          <a href="login.html" class="btn btn-primary">Login</a>
+          <!--<a href="#" class="btn btn-primary" onclick="modalRegistro()">Suscribete</a>-->
+          <a class="btn btn-primary" href="login.html">Suscribete</a>
         </div>
       </div>
     </header>
-
-    
+ 
     <section  class="about-section text-center">
       <div class="container">
         <div class="row">
@@ -189,40 +196,53 @@
             </div>
           </div>
           
-          <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
-            <div class="col-lg-6">
-              <img class="img-fluid" src="img/fondos/pagos.png" alt="">
-            </div>
-            <div class="col-lg-6">
-              <div class="bg-black text-center h-100 project">
-                <div class="d-flex h-100">
-                  <div class="project-text w-100 my-auto text-center text-lg-left">
-                    <h4 class="text-white">Lorem ipsum</h4>
-                    <p class="mb-0 text-white-50">Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.</p>
-                    <hr class="d-none d-lg-block mb-0 ml-0">
+          <div class="container">
+              <div class="card-deck mb-3 text-center">
+                <div class="card mb-4 shadow-sm">
+                  <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Gratis</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mensual</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                     
+                      <li>2 GB de almacenamiento</li>
+                      <li>Soporte</li>
+                      <li>Acceso al centro de ayuda</li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-primary">Registrate Gratis</button>
+                  </div>
+                </div>
+                <div class="card mb-4 shadow-sm">
+                  <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Profesional</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title">$15 <small class="text-muted">/ mensual</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>10 GB de almacenamiento</li>
+                      <li>Prioridad de soporte por correo</li>
+                      <li>Acceso al centro de ayuda</li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-primary">Comienza ya</button>
+                  </div>
+                </div>
+                <div class="card mb-4 shadow-sm">
+                  <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Enterprise</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title">$29 <small class="text-muted">/ mensual</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                      
+                      <li>15 GB de almacenamiento</li>
+                      <li>Soporte medinate correo y teléfono</li>
+                      <li>Acceso al centro de ayuda</li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-primary">Comienza ya</button>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-  
-         
-          <div class="row justify-content-center no-gutters">
-            <div class="col-lg-6">
-              <img class="img-fluid" src="img/fondos/pagos2.png">
-            </div>
-            <div class="col-lg-6 order-lg-first">
-              <div class="bg-black text-center h-100 project">
-                <div class="d-flex h-100">
-                  <div class="project-text w-100 my-auto text-center text-lg-right">
-                    <h4 class="text-white">Lorem ipsum</h4>
-                    <p class="mb-0 text-white-50">Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.</p>
-                    <hr class="d-none d-lg-block mb-0 mr-0">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
   
         </div>
