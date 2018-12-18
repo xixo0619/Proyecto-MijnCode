@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <link rel="icon" type="img/png" href="img/logo/letra.png">
+    <title>Panel-Mijn Code</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/panel.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-dark fixed-top bg-dark  flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="index.html"><img src="img/Logo/logo.png" style="width: 40px;"></a>
+      <ul class="navbar-nav px-3">
+         <div id="btn-cerrar-dos">
+            <li class="nav-item text-nowrap">
+              <a class="nav-link" href="#"><h5>SIGN OUT</h5></a>
+            </li>
+         </div>
+      </ul>
+    </nav>
+ 
+
+    <!--Sidebar-->
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="perfil.html" style="margin-top: 10px">
+                  <span data-feather="home"></span>
+                  Perfil<span class="sr-only">(current)</span>
+                </a>
+              </li>
+            
+
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+              <span>Administración de Proyectos</span>
+              <a class="d-flex align-items-center text-muted" href="#">
+                <span data-feather="plus-circle"></span>
+              </a>
+            </h6>
+            <ul class="nav flex-column mb-2">
+              
+              <li class="nav-item">
+                <a class="nav-link" href="#" onclick="modalCarpeta()" >
+                  <span data-feather="file-text"></span>
+                  Crear Carpetas 
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" id="nuevo-archivo" onclick="modalArchivo()">
+                  <span data-feather="file-text"></span>
+                  Crear Archivos
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Proyectos Compartidos
+                </a>
+              </li>
+              <li >
+                <a href="#" class="nav-link" onclick="modalSnipet()">
+                    <span data-feather="file-text"></span>
+                    Crear Snipets
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        
+        <!--Panel de Carpetas y Archivos-->
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2"> Carpetas de Proyectos</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group mr-2">
+                <button class="btn btn-sm btn-outline-secondary" onclick="modalArea()">Area de trabajo</button>
+              </div>
+              <div class="btn-group mr-2">
+                <button class="btn btn-sm btn-outline-secondary">Compartir Proyecto</button>
+              </div>
+            </div>
+          </div>
+          <!--Div donde se agregan las carpetas-->
+          <div id="cargar-carpetas" class="row">
+              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                <div>
+                  <img src="img/carpetas/carpeta.png" id="carpeta"><br>
+                  <b>Nombre carpeta</b>
+                </div>
+              </div>
+
+              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                  <div>
+                    <img src="img/carpetas/archivos.png" id="archivo"><br>
+                    <b>Nombre archivo</b>
+                  </div>
+                </div>
+          </div> 
+        </main> 
+      </div>
+    </div>
+
+    
+ 
+    <!--Modales-->
+    <div class="modal" id="modalNuevaCarpeta" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">Nueva Carpeta</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <table id="tabla" class="table table-light table-hover">
+                <tr>
+                  <td>Nombre de la carpeta:</td>
+                  <td>
+                    <input class="form-control" type="text" placeholder="Nombre carpeta" id="txt-nombre-carpeta">
+                  </td>
+                </tr>
+              </table>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="btn-carpeta">Crear Carpeta</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="modalNuevoArchivo" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Archivo</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <form>
+                  <table class="table table-light table-hover">
+                    <tr>
+                      <td>Nombre del archivo:</td>
+                      <td>
+                        <input class="form-control" type="text" placeholder="Nombre archivo" id="txt-nombre-archivo">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Lenguaje:</td>
+                      <td>
+                        <select class="form-control" id="slc-lenguaje">
+                          <option value="1">css</option>
+                          <option value="2">html</option>
+                          <option value="3">js</option>
+                        </select>
+                      </td>
+                    </tr>
+                  </table>
+                </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="btn-archivo">Crear Archivo</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="modalNuevoSnipet" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">Nuevo Snipets</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <table id="tabla" class="table table-light table-hover">
+                <tr>
+                  <td>Nombre Snipets:</td>
+                  <td>
+                    <input class="form-control" type="text" placeholder="Nombre carpeta" id="txt-nombre-snipet">
+                  </td>
+                </tr>
+                <tr>
+                  <td>Contenido Snipets:</td>
+                  <td>
+                    
+                    <textarea class="form-control" id="contenido-snipet"></textarea>
+                  </td>
+                </tr>
+              </table>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="btn-carpeta">Crear Carpeta</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="modalArea" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content" >
+          <div class="modal-header">
+            <h3 class="modal-title">Panel de trabajo</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+                <!--<div class="row">
+                  <div class="col-md-4">
+                     <label for="message-text" class="col-form-label">HTML:</label>
+                     <textarea class="form-control" id="message-text" cols="50" rows="4" style="width: 226px;height: 314px;"></textarea>
+                     <textarea class="form-control" id="message-text" cols="50" rows="4" style="width: 226px;height: 314px;"></textarea>
+                  </div>
+                </div>-->
+                <div id="container">
+                    <h3><label for="">HTML</label></h3><br>
+                  <textarea id="txtarea" cols="50" rows="5"></textarea>
+                </div>
+                <div id="container">
+                    <h3><label for="">CSS</label></h3><br>
+                  <textarea id="txtarea" cols="50" rows="5"></textarea>
+                </div>
+                <div id="container">
+                  <h3><label for="">Javascript</label></h3><br>
+                  <textarea id="txtarea" cols="50" rows="5"></textarea>
+                </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="btn-carpeta">Guardar Cambios</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Icons -->
+    
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script>
+      feather.replace()
+    </script>
+    <script src="jquery/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/panel.js"></script>
+   
+
+    
+  </body>
+</html>

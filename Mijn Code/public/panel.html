@@ -7,7 +7,7 @@
     <meta name="author" content="">
     
     <link rel="icon" type="img/png" href="img/logo/letra.png">
-    <title>Mijn Code</title>
+    <title>Panel-Mijn Code</title>
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -18,21 +18,34 @@
 
   <body>
     <nav class="navbar navbar-dark fixed-top bg-dark  flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#"><img src="img/perfil.png" class="rounded-circle img-thumbnail" style="width: 24px;"></a>
+
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="index.html"><img src="img/Logo/logo.png" style="width: 40px;"></a>
       <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap">
-          <a class="nav-link" href="index.html"><h5>SIGN OUT</h5></a>
-        </li>
+         <div id="btn-cerrar-dos">
+            <li class="nav-item text-nowrap">
+              <a class="nav-link" href="#"><h5>SIGN OUT</h5></a>
+
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#"><img src="img/Logo/logo.png" style="width: 40px;"></a>
+      <ul class="navbar-nav px-3">
+         <div>
+            <li class="nav-item text-nowrap">
+              <a class="nav-link" href="index.html"><h5>SIGN OUT</h5></a>
+
+            </li>
+         </div>
       </ul>
     </nav>
+ 
 
+
+    <!--Sidebar-->
     <div class="container-fluid">
       <div class="row">
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" href="perfil.html">
+                <a class="nav-link active" href="perfil.html" style="margin-top: 10px">
                   <span data-feather="home"></span>
                   Perfil<span class="sr-only">(current)</span>
                 </a>
@@ -46,16 +59,17 @@
               </a>
             </h6>
             <ul class="nav flex-column mb-2">
+              
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="#" onclick="modalCarpeta()" >
                   <span data-feather="file-text"></span>
-                  Carpetas 
+                  Crear Carpetas 
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="#" id="nuevo-archivo" onclick="modalArchivo()">
                   <span data-feather="file-text"></span>
-                  Archivos
+                  Crear Archivos
                 </a>
               </li>
               <li class="nav-item">
@@ -64,16 +78,17 @@
                   Proyectos Compartidos
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Proyectos Asignados
+              <li >
+                <a href="#" class="nav-link">
+                    <span data-feather="file-text"></span>
+                    Proyectos Asignados
                 </a>
               </li>
             </ul>
           </div>
         </nav>
-
+        
+        <!--Panel de Carpetas y Archivos-->
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <h1 class="h2"> Carpetas de Proyectos</h1>
@@ -81,25 +96,151 @@
               <div class="btn-group mr-2">
                 <button class="btn btn-sm btn-outline-secondary">Compartir Proyecto</button>
               </div>
-              
             </div>
           </div>
-          <img id="carpeta" src="img/carpetas.png" ">
 
-          <h2>Archivos Recientes</h2>
-          <div class="table-responsive">
-            <table class="table table-striped table-sm">
-             
+          <!--Div donde se agregan las carpetas-->
+          <div id="codigo" class="row">
+              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                <div>
+                  <img src="img/carpetas/carpeta.png" id="carpeta"><br>
+                  <b>Nombre carpeta</b>
+                </div>
+              </div>
+
+              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                  <div>
+                    <img src="img/carpetas/archivos.png" id="archivo"><br>
+                    <b>Nombre archivo</b>
+                  </div>
+                </div>
+
           </div>
-        </main>
+        </main> 
       </div>
     </div>
+ 
+    <!--Modales-->
+    <div class="modal" id="modalNuevaCarpeta" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">Nueva Carpeta</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <table id="tabla" class="table table-light table-hover">
+                <tr>
+                  <td>Nombre de la carpeta:</td>
+                  <td>
+                    <input class="form-control" type="text" placeholder="Nombre carpeta" id="txt-nombre-carpeta">
+                  </td>
+                </tr>
+              </table>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="btn-carpeta">Crear Carpeta</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="modalNuevoArchivo" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Archivo</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <form>
+                  <table class="table table-light table-hover">
+                    <tr>
+                      <td>Nombre del archivo:</td>
+                      <td>
+                        <input class="form-control" type="text" placeholder="Nombre archivo" id="txt-nombre-archivo">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Lenguaje:</td>
+                      <td>
+                        <select class="form-control" id="slc-lenguaje">
+                          <option value="1">css</option>
+                          <option value="2">html</option>
+                          <option value="3">js</option>
+                        </select>
+                      </td>
+                    </tr>
+                  </table>
+                </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="btn-archivo">Crear Archivo</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+          
+          <div class="row">
+              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                <div>
+                  <img src="img/carpetas/carpeta.png" style="margin-right:10px"><br>
+                  <b>Nombre carpeta</b>
+                </div>
+              </div>
+              
+              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                  <div>
+                      <img src="img/carpetas/carpeta.png" style="margin-right:10px"><br>
+                      <b>Nombre carpeta</b>
+                    </div>
+                  
+              </div>
+              
+              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                  <div>
+                      <img src="img/carpetas/carpeta.png" style="margin-right:10px"><br>
+                      <b>Nombre carpeta</b>
+                    </div>
+                    
+              </div>
+              
+              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                  <div>
+                      <img src="img/carpetas/carpeta.png" style="margin-right:10px"><br>
+                      <b>Nombre carpeta</b>
+                    </div>
+                      
+              </div>
+            </div>
+
+        </main> 
+      </div>
+    </div>
+
+    
+
     
     <!-- Icons -->
+    
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
     <script>
       feather.replace()
     </script>
+    <script src="jquery/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/panel.js"></script>
+   
 
     
   </body>
