@@ -16,6 +16,8 @@ $("#btn-cerrar-dos").click(function () {
 
 $("#btn-carpeta").click(function () {
     var parametros = "nombre_carpeta="+$("txt-nombre-carpeta").val();
+
+    var parametros = "nombre_carpeta"+$("txt-nombre-carpeta").val();
     $.ajax({
         url: "/carpeta",
         method: "POST",
@@ -35,9 +37,19 @@ $("#btn-carpeta").click(function () {
  }
 
 $("#btn-archivo").click(function() {
+
     var parametros = "nombre_archivo="+$("#txt-nombre-archivo").val();
                      "$id_lenguajes="+$("#slc-lenguaje").val();
                      "$id_carpetas="+carpetaId;
+    var parametros = "nombre_archivo="+$("#txt-nombre-archivo").val();
+                     "$id_lenguajes="+$("#slc-lenguaje").val();
+                     "$id_carpetas="+carpetaId;
+
+    var parametros = "nombre_archivo"+$("#txt-nombre-archivo").val();
+                     "$id_lenguajes"+$("#slc-lenguaje").val();
+                     "$id_carpetas"+carpetaId;
+
+
     $.ajax({
         url: "/archivo",
         method:"POST",
@@ -48,6 +60,7 @@ $("#btn-archivo").click(function() {
         }
     });                 
     $("#modalNuevoArchivo").modal("hide");
+
 });
 function modalSnipet() {
     $("#modalNuevoSnipet").modal("show");
@@ -107,4 +120,4 @@ function cargarArchivos() {
 $(document).ready(function() {
     cargarCarpetas();
 });
-    
+
